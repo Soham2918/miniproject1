@@ -17,13 +17,13 @@
 
 </div>  
 
-<div class="container bg-light p-5 shadow-lg   ">
+<div class="container bg-light px-2 shadow-lg   col-sm-12">
     
-    <form action=""  class="p-5 mx-3 shadow-lg p-5  col-6 bg-light rounded " [formGroup]="forgetPwd">
+    <form action=""  class="p-2 mx-3 shadow-lg p-5 col-lg-7 col-sm-12 bg-light rounded " [formGroup]="forgetPwd">
         <h2>Forgot Password</h2>
-        <div class="form-group col-7">
-            <label for="" class="col-form-label-lg">Email</label>
-            <input type="text" class="form-control" name="emailId" formControlName="emailId" > 
+        <div class="form-group col-lg-6 col-sm-12">
+            <label for="" class="col-form-label-lg col-sm-12">Email</label>
+            <input type="text" class="form-control col-sm-12" name="emailId" formControlName="emailId" > 
             <small *ngIf="validator" style="color:red"> Please Register First </small>
             
         </div>

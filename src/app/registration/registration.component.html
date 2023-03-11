@@ -18,32 +18,32 @@
 </div>  
 
 <div class="container shadow-lg bg-light ">
-<form action="" class="p-2" [formGroup]="regSerForm">
-<div class="row p-5  ">
+<form action="" class="p-2 col-sm-12 "[formGroup]="regSerForm">
+<div class="row p-5 col-sm-12 ">
             
-<div class="col-12 mx-2 form-group shadow-lg p-3">
+<div class="col-sm-12 mx-2 form-group shadow-lg p-3">
 
-<div class="row py-2">
-    <div class="px-5 col-6">
+<div class="row py-2 col-lg-12 col-sm-12">
+    <div class="px-5 col-lg-6 col-sm-12">
         <label for="" class="col-form-label-lg" >First Name:</label>
         <input type="text" class="form-control" name="fname" formControlName="fname">
 </div >
 
-<div class="px-5 col-6">
-    <label for="" class="col-form-label-lg " >Last Name:</label>
+<div class="px-5 col-lg-6 col-sm-12">
+    <label for="" class="col-form-label-lg col-lg-6 col-sm-12 " >Last Name:</label>
     <input type="text" class="form-control" name="lname" formControlName="lname">
 </div>
 </div>
 
-<div class="row py-2">
-    <div class="px-5 col-6">
+<div class="row col-lg-12 col-sm-12">
+    <div class="px-5 col-lg-6 col-sm-12">
         <label for="" class="col-form-label-lg" >PhNo</label>
         <input type="number" class="form-control" name="phno" formControlName="phno">
     </div>
 
     
 
-    <div class="px-5 col-6">
+    <div class="px-5 col-lg-6 col-sm-12">
   
     <label for="" class="col-form-label-lg"  >e-Mail</label>
         <input type="string" class="form-control" name="email" formControlName="email" (blur)="uniqueEmailCheckServ($any($event.target).value)" >
@@ -52,13 +52,13 @@
 </div>
     
 
-<div class="row py-2">
-    <div class="px-5 col-6">
+<div class="row py-2 col-sm-12 col-lg-12">
+    <div class="px-5 col-sm-12 col-lg-6">
         <label for="" class="col-form-label-lg" >DOB</label>
         <input type="date" class="form-control" name="dob" formControlName="dob">
     </div>
 
-    <div class="px-5 col-6" >
+    <div class="px-5 col-lg-6 col-sm-12" >
         <label for="" class="col-form-label-lg">Select Gender</label>
         <select class="form-select" name="gender" formControlName="gender" >
             <option selected>Select Gender</option>
@@ -70,9 +70,9 @@
 
 </div>
 
-<div class="row py-2">
+<div class="row py-2 col-lg-12 col-sm-12">
 
-    <div class="px-5 col-4">
+    <div class="px-5 col-lg-4 col-sm-12">
         <label for="" class="col-form-label-lg" >Country</label>
         <div>
             <select name="" id="" class="form-select" name="countryId" formControlName="countryId" (change)="getStatesServ($any($event.target).value)">
@@ -82,17 +82,17 @@
         </div>
     </div>
 
-    <div class="px-2 col-4" >
+    <div class="px-5 col-lg-4 col-sm-12" >
         <label for="" class="col-form-label-lg">State</label><br>
-         <select class="form-select" name="stateId" formControlName="stateId" (change)="getCitiesServ($any($event.target).value)">
+         <select class="form-select col-sm-" name="stateId" formControlName="stateId" (change)="getCitiesServ($any($event.target).value)">
         <option  *ngFor="let st of state|keyvalue" [value]="st.key">{{st.value}}</option>
 
         </select>
      </div>
 
-    <div class="px-5 col-4">
+    <div class="px-5 col-lg-4 col-sm-12">
         <label for="" class="col-form-label-lg" >City</label>
-        <select name="" id="" class="form-select" name="cityId" formControlName="cityId">
+        <select name="" id="" class="form-select col-sm-12" name="cityId" formControlName="cityId">
             <option  *ngFor="let ct of city |keyvalue" [value]="ct.key">{{ct.value}}</option>
 
         </select>    
