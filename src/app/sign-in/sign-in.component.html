@@ -17,22 +17,22 @@
 
 </div>
 
-<div class="container bg-primary  shadow-lg p-3 mb-5 bg-light rounded">
+<div class="container bg-primary  shadow-lg p-3 mb-5 col-sm-12 col-lg-8 bg-light rounded">
     <form class="p-5" [formGroup]="logInUserForm">
-        <div class="form-group p-5 m-4 col-6 justify-content-center border shadow-sm p-3 mb-5 bg-light rounded">
+        <div class="form-group p-5 m-4 col-sm-12 col-lg-8 justify-content-center border shadow-sm p-3 mb-5 bg-light rounded">
             <h2 class="">Sign In Here</h2>
-            <div class="form-input col-8">
+            <div class="form-input col-sm-12 col-lg-8">
                 <label for="" class="col-form-label-lg">Email :</label>
                 <input type="email" class="form-control" name="email" formControlName="email" required="">
             </div>
-            <div class="form-input col-8">
+            <div class="form-input col-lg-8 col-sm-12">
                 <label for="" class="col-form-label-lg">Password :</label>
                 <input type="any" class="form-control" name="pwd" formControlName="pwd" required="">
             </div>
             <div >
                 <button class="btn btn-success my-3 "  (click)="logInU()"> Sign-In</button>
             </div>
-            <div class="my-2">
+            <div class="my-2 col-sm-12 col-lg-8">
                 <button [routerLink]="'/forgetPwd/'" class=" btn btn-outline-danger " >Forgot PWD ?</button>
                 <button [routerLink]="'/registration/'" class="btn btn-outline-warning mx-2 text-black"> Register </button>
             </div>
