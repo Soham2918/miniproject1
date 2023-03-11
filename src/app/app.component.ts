@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'miniproject1';
+
+  constructor(){}
+
+  logoutMsg(){
+    alert('LogedOut Successfully.....!!')
+  }
 }

@@ -1,24 +1,30 @@
-<div class="container bg-light">
-    <div class="row col-6">
-        <form class="p-5 m-4">
+<div class="container bg-light shadow-lg">
+    <div class="row col-6 p-5">
+        <form class="p-5 m-4 shadow-lg" [formGroup]="unlockForm">
             <h2>Unlock Account</h2>
             <div class="form-group">
-                <label for="" class="col-form-label-lg">e-Mail Id</label>
-                <input type="text" class="form-control">
+                <label for="" class="col-form-label-lg" >e-Mail Id</label>
+                <input type="text" class="form-control"  name="email" formControlName="email" >
+                <span *ngIf="!unlockForm.get('email')?.valid && unlockForm.get('email')?.touched" style="color: red;" class="text-danger">e-Mail ID Required</span>
             </div>
             <div class="form-group">
                 <label for="" class="col-form-label-lg">Temporary PWD</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="tempPwd" formControlName="tempPwd" (click)="tempPopup()">
+                <small *ngIf="tempPwd" style="color:red">Check Temp Pwd Again</small>
             </div>
+            
             <div class="form-group">
-                <label for="" class="col-form-label-lg">Choose New PWD</label>
-                <input type="text" class="form-control">
+                <label for="" class="col-form-label-lg" >Choose New PWD</label>
+                <input type="password" class="form-control" name="newPwd" formControlName="newPwd" >
+                <!-- <small *ngIf="pwdCheck">PWD Must Be Same</small> -->
+
             </div>
             <div class="form-group">
                 <label for="" class="col-form-label-lg">Confirm PWD</label>
-                <input type="text" class="form-control">
+                <input type="password" class="form-control" (change)="samePwd()" name="confirmPwd" formControlName="confirmPwd">
+                <small *ngIf="pwdCheck" style="color:red">PWD Must Be Same</small>
             </div>
-            <div class="btn btn-success my-3">Submit</div>
+            <button class="btn btn-success my-3"  (click)="[unlockUserService()]"  >Submit</button>
         </form>
     </div>
 </div>

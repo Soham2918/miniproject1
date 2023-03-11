@@ -1,11 +1,35 @@
-<div class="container bg-light p-5 ">
-    
-    <form action=""  class="p-5 mx-3">
-        <h2>Forgot Password</h2>
-        <div class="form-group col-4">
-            <label for="" class="col-form-label-lg">Email</label>
-            <input type="text" class="form-control">
+
+<div class="container  bg-light shadow-lg">
+    <div class="row border-bottom shadow-sm m-1">
+        <div class="navbar navbar-expand-lg text-primary col-4 py-2 px-5 ">
+        <h1>     User+App </h1>       </div>
+        <div class="navbar navbar-expand-lg col-8 justify-content-end py-2  ">
+            <!-- <a [routerLink]="'home'" class=" navbar-brand font-weight-bold btn text-dark ">Home</a> -->
+            <a [routerLink]="'/signin'" class=" navbar-brand font-weight-bold btn  text-dark">Sign In</a>
         </div>
-        <button class="btn btn-success my-3">Submit</button>
+
+        
+        
+        
+        
+
+    </div>
+
+</div>  
+
+<div class="container bg-light p-5 shadow-lg   ">
+    
+    <form action=""  class="p-5 mx-3 shadow-lg p-5  col-6 bg-light rounded " [formGroup]="forgetPwd">
+        <h2>Forgot Password</h2>
+        <div class="form-group col-7">
+            <label for="" class="col-form-label-lg">Email</label>
+            <input type="text" class="form-control" name="emailId" formControlName="emailId" > 
+            <small *ngIf="validator" style="color:red"> Please Register First </small>
+            
+        </div>
+        <button class="btn btn-success my-3" (click)="[fgtPWDServC(),uniqueEmailSer()]">Submit</button>
+        <div class="spinner" class="spinner-border mx-5" role="status" *ngIf="loader">  </div>
+
     </form>
 </div>
+
